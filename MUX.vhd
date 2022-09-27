@@ -18,6 +18,6 @@ end entity MUX_E;
 
 architecture MUX_BEHAV_A of MUX_E is
 begin
-    O_PDL   <= I_BITS_A when I_SELECT = '1' else
-               I_BITS_B;
-end architecture MUX_A;
+    O_PDL   <= I_BITS_B when I_SELECT = '1' else
+               I_BITS_A;
+end architecture MUX_BEHAV_A;
