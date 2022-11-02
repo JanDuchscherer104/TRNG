@@ -4,6 +4,7 @@ library ieee;
 
 library work;
 
+-- module not used any more since the delay ctrl signals need to be encoded using crs and fn ctrl
 entity PDL_BLOCK_E is
     generic (
         C_N_PDLS: natural := 2**4;
@@ -38,7 +39,7 @@ begin
                 )
                 port map (
                     I_PROPAG_BIT => CLK_PROPAG_BIT(j),
-                    I_DELAY_CTRL => not I_DELAY_CTRL,
+                    I_DELAY_CTRL => not I_DELAY_CTRL, --todo not a perfect differential structure
                     O_OUT        => CLK_PROPAG_BIT(j + 1)
                 );
         end generate GEN_PDLS;
